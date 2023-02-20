@@ -8,10 +8,10 @@ module Accessible
   def check_user
     if current_shop
       flash.clear
-      redirect_to(authenticated_shop_root_path) and return
+      redirect_to(shop_dashboard_path) and return
     elsif current_customer
       flash.clear
-      redirect_to(authenticated_customer_root) and return
+      redirect_to(customer_dashboard_path) and return
     end
   end
 end

@@ -1,0 +1,28 @@
+<h1>Shop logged in</h1>
+<%= link_to "Add product", new_product_path, class: "btn btn-primary float-end me-3" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Count</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <th scope="row">#</th>
+      <td><%= product.name %></td>
+      <td>Per <%= product.name %> / <%= product.price %></td>
+      <td><%= product.count %></td>
+      <td>
+      <%= link_to "Edit", edit_product_path(product) %> | <%= button_to "Delete", product, method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+  
+    
+  </tbody>
+</table>
